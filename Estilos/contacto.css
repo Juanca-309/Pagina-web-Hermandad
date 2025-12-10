@@ -1,4 +1,4 @@
-/* --- VARIABLES (Igual que inicio) --- */
+/* --- VARIABLES --- */
 :root {
     --morado: #4B0082;
     --moradoNav: #320056;
@@ -20,7 +20,7 @@ body {
     line-height: 1.5;
 }
 
-/* --- CABECERA --- */
+/* --- CABECERA (Igual que en Inicio) --- */
 header {
     background-color: var(--morado);
     color: var(--blanco);
@@ -93,57 +93,99 @@ main {
     border-radius: 10px;
 }
 
-/* --- SECCIÓN ESPECÍFICA DE HISTORIA --- */
-
-/* Título de la historia */
-#historia h2 {
+h2 {
     color: var(--morado);
     border-bottom: 2px solid var(--dorado);
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     text-align: center;
+    margin-top: 20px;
 }
 
-/* Párrafos de texto */
-#historia p {
-    text-align: justify; /* Para que quede cuadradito como un libro */
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-
-/* --- BARRA LATERAL (ASIDE) --- */
-aside {
-    background-color: var(--fondo); /* Un gris clarito definido en variables */
+/* --- FORMULARIO DE CONTACTO --- */
+#contacto form {
+    max-width: 600px; /* Ancho máximo para que no se estire demasiado */
+    margin: 30px auto; /* Centrar el formulario */
     padding: 20px;
-    margin-top: 40px;
-    border-left: 5px solid var(--dorado); /* Línea dorada a la izquierda */
+    background-color: var(--fondo); /* Fondo gris claro */
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+fieldset {
+    border: 2px solid var(--dorado); /* Borde dorado */
+    border-radius: 8px;
+    padding: 20px;
+}
+
+legend {
+    color: var(--morado);
+    font-weight: bold;
+    padding: 0 10px;
+    font-size: 1.1rem;
+}
+
+label {
+    display: block; /* Cada etiqueta en una línea nueva */
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos para las cajas de texto */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 95%; /* Ocupan casi todo el ancho disponible */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-aside h3 {
-    color: var(--morado);
-    margin-top: 0;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
+/* Estilos para los checkbox (opciones) */
+input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Hacer la casilla un poco más grande */
 }
 
-aside ul {
-    list-style: none; /* Quitamos los puntos de la lista */
-    padding: 0;
-}
-
-aside li {
-    margin: 10px 0;
-}
-
-aside a {
-    color: var(--moradoNav);
-    text-decoration: none;
+/* Botón de enviar */
+button {
+    background-color: var(--morado);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
     font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 25px;
+    display: block;
+    width: 100%;
+    transition: background 0.3s;
 }
 
-aside a:hover {
-    color: var(--dorado);
-    text-decoration: underline;
+button:hover {
+    background-color: var(--dorado); /* Cambio de color al pasar el ratón */
+    color: var(--morado);
+}
+
+/* --- SEDE CANÓNICA (MAPA) --- */
+#sede {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#sede p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    border: 4px solid var(--morado); /* Marco morado para el mapa */
+    border-radius: 10px;
 }
 
 .btn-subir {
@@ -193,7 +235,15 @@ footer a {
     }
     
     main {
-        padding: 15px; /* Menos relleno en móvil */
+        padding: 15px;
         width: 90%;
+    }
+
+    form {
+        padding: 10px; /* Menos relleno en el formulario en móviles */
+    }
+
+    iframe {
+        height: 300px; /* Mapa un poco más bajo en móviles */
     }
 }

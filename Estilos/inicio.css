@@ -1,6 +1,7 @@
 /* --- VARIABLES --- */
 :root {
     --morado: #4B0082;
+    --moradoNav: #320056;
     --dorado: #D4AF37;
     --blanco: #ffffff;
     --fondo: #f9f9f9;
@@ -16,7 +17,7 @@ body {
     background-attachment: fixed;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 /* --- CABECERA--- */
@@ -55,7 +56,7 @@ header {
 
 /* --- MENÚ --- */
 nav {
-    background-color: #320056;
+    background-color: var(--moradoNav);
 }
 
 nav ul {
@@ -111,6 +112,24 @@ main {
 .escudo img{
     width: 300px; 
     filter: drop-shadow(0 0 10px rgb(106, 106, 106)); 
+}
+
+.btn-subir {
+    position: fixed;   /* Se queda fijo en la pantalla */
+    bottom: 20px;      /* Abajo */
+    right: 20px;       /* Derecha */
+    
+    background: #D4AF37; /* Fondo Dorado */
+    color: #fff;         /* Texto blanco */
+    
+    padding: 10px 15px;  /* Tamaño del botón */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold;
+    border-radius: 5px;  /* Bordes un pelín redondeados */
+}
+
+.btn-subir:hover {
+    background: #4B0082; /* Cambia a Morado al pasar el ratón */
 }
 
 /* --- FOOTER --- */
