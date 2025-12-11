@@ -5,6 +5,7 @@
     --dorado: #D4AF37;
     --blanco: #ffffff;
     --fondo: #f9f9f9;
+    --footer: #1a1a1a;
 }
 
 /* --- GENERAL --- */
@@ -103,10 +104,10 @@ h2 {
 
 /* --- FORMULARIO DE CONTACTO --- */
 #contacto form {
-    max-width: 600px; /* Ancho máximo para que no se estire demasiado */
-    margin: 30px auto; /* Centrar el formulario */
+    width: 600px; 
+    margin: auto; 
     padding: 20px;
-    background-color: var(--fondo); /* Fondo gris claro */
+    background-color: var(--fondo); 
     border-radius: 10px;
     border: 1px solid #ccc;
 }
@@ -132,26 +133,34 @@ label {
 }
 
 /* Estilos para las cajas de texto */
-input[type="text"],
-input[type="email"],
-input[type="tel"] {
-    width: 95%; /* Ocupan casi todo el ancho disponible */
+#nombre{
+    width: 95%;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-/* Estilos para los checkbox (opciones) */
-input[type="checkbox"] {
-    margin-right: 10px;
-    transform: scale(1.2); /* Hacer la casilla un poco más grande */
+#email{
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#telefono{
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 /* Botón de enviar */
 button {
     background-color: var(--morado);
-    color: white;
+    color: var(--blanco);
     border: none;
     padding: 12px 25px;
     font-size: 1rem;
@@ -161,7 +170,7 @@ button {
     margin-top: 25px;
     display: block;
     width: 100%;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
 
 button:hover {
@@ -188,28 +197,26 @@ iframe {
     border-radius: 10px;
 }
 
-.btn-subir {
-    position: fixed;   /* Se queda fijo en la pantalla */
-    bottom: 20px;      /* Abajo */
-    right: 20px;       /* Derecha */
-    
-    background: #D4AF37; /* Fondo Dorado */
-    color: #fff;         /* Texto blanco */
-    
-    padding: 10px 15px;  /* Tamaño del botón */
-    text-decoration: none; /* Sin subrayado */
+.subir {
+    position: fixed;   
+    bottom: 20px;     
+    right: 20px;       
+    background: var(--dorado); 
+    color: var(--blanco);         
+    padding: 10px 15px;  
+    text-decoration: none; 
     font-weight: bold;
-    border-radius: 5px;  /* Bordes un pelín redondeados */
+    border-radius: 5px;  
 }
 
-.btn-subir:hover {
-    background: #4B0082; /* Cambia a Morado al pasar el ratón */
+.subir:hover {
+    background-color: var(--moradoNav);
 }
 
 /* --- FOOTER --- */
 footer {
-    background-color: #1a1a1a; 
-    color: #cccccc; 
+    background-color: var(--footer); 
+    color: var(--blanco); 
     border-top: 3px solid var(--dorado); 
     padding: 30px 20px;
     text-align: center;

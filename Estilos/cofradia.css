@@ -5,6 +5,7 @@
     --dorado: #D4AF37;
     --blanco: #ffffff;
     --fondo: #f9f9f9;
+    --footer: #1a1a1a;
 }
 
 /* --- GENERAL --- */
@@ -103,19 +104,20 @@ h2 {
 
 /* --- SECCIÓN TRAJES DE ESTATUTOS --- */
 #traje article {
-    text-align: center; /* Centrar las imágenes */
+    text-align: center; 
 }
 
 figure {
-    display: inline-block; /* Poner una al lado de la otra */
-    width: 45%; /* Ocupar casi la mitad del ancho */
+    display: inline-block; 
+    width: 45%; 
     margin: 15px;
-    vertical-align: top; /* Alinear arriba */
+    vertical-align: top; 
 }
 
 figure img {
-    width: 100%;
-    max-width: 300px; /* Tamaño máximo para que no se vean gigantes */
+    width: 300px;     
+    height: 450px;        
+    object-fit: cover;    
     border: 3px solid var(--morado);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
@@ -124,7 +126,7 @@ figure img {
 figcaption {
     margin-top: 10px;
     font-size: 0.95rem;
-    text-align: justify; /* Texto explicativo justificado */
+    text-align: justify; 
     padding: 0 10px;
 }
 
@@ -139,7 +141,7 @@ video {
     border: 4px solid var(--dorado);
     border-radius: 10px;
     display: block;
-    margin: 20px auto; /* Centrar bloque */
+    margin: 20px auto; 
 }
 
 audio {
@@ -150,7 +152,7 @@ audio {
 /* --- TABLA DE DATOS --- */
 table {
     width: 100%;
-    border-collapse: collapse; /* Bordes pegados */
+    border-collapse: collapse; 
     margin-top: 20px;
     text-align: center;
 }
@@ -164,49 +166,41 @@ caption {
 
 th {
     background-color: var(--morado);
-    color: white;
+    color: var(--blanco);
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--footer);
 }
 
 td {
     padding: 10px;
-    border: 1px solid #ccc;
-}
-
-/* Filas alternas de color gris claro */
-tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+    border: 1px solid var(--footer);
 }
 
 tfoot td {
     background-color: var(--fondo);
     font-style: italic;
-    color: #555;
     font-size: 0.9rem;
 }
 
-.btn-subir {
-    position: fixed;   /* Se queda fijo en la pantalla */
-    bottom: 20px;      /* Abajo */
-    right: 20px;       /* Derecha */
-    
-    background: #D4AF37; /* Fondo Dorado */
-    color: #fff;         /* Texto blanco */
-    
-    padding: 10px 15px;  /* Tamaño del botón */
-    text-decoration: none; /* Sin subrayado */
+.subir {
+    position: fixed;   
+    bottom: 20px;      
+    right: 20px;       
+    background: var(--dorado); 
+    color: var(--blanco);         
+    padding: 10px 15px; 
+    text-decoration: none; 
     font-weight: bold;
-    border-radius: 5px;  /* Bordes un pelín redondeados */
+    border-radius: 5px;  
 }
 
-.btn-subir:hover {
-    background: #4B0082; /* Cambia a Morado al pasar el ratón */
+.subir:hover {
+    background-color: var(--moradoNav); 
 }
 
 /* --- FOOTER --- */
 footer {
-    background-color: #1a1a1a; 
+    background-color: var(--footer); 
     color: #cccccc; 
     border-top: 3px solid var(--dorado); 
     padding: 30px 20px;
@@ -232,7 +226,6 @@ footer a {
         border-bottom: 1px solid rgba(255,255,255,0.1); 
     }
     
-    /* En móvil, las figuras una debajo de otra */
     figure {
         display: block;
         width: 100%;

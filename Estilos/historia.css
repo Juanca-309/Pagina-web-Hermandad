@@ -5,6 +5,7 @@
     --dorado: #D4AF37;
     --blanco: #ffffff;
     --fondo: #f9f9f9;
+    --footer: #1a1a1a;
 }
 
 /* --- GENERAL --- */
@@ -94,8 +95,6 @@ main {
 }
 
 /* --- SECCIÓN ESPECÍFICA DE HISTORIA --- */
-
-/* Título de la historia */
 #historia h2 {
     color: var(--morado);
     border-bottom: 2px solid var(--dorado);
@@ -105,29 +104,29 @@ main {
 
 /* Párrafos de texto */
 #historia p {
-    text-align: justify; /* Para que quede cuadradito como un libro */
+    text-align: justify;
     font-size: 1.1rem;
     margin-bottom: 20px;
 }
 
 /* --- BARRA LATERAL (ASIDE) --- */
 aside {
-    background-color: var(--fondo); /* Un gris clarito definido en variables */
+    background-color: var(--fondo);
     padding: 20px;
     margin-top: 40px;
-    border-left: 5px solid var(--dorado); /* Línea dorada a la izquierda */
+    border-left: 5px solid var(--dorado);
     border-radius: 5px;
 }
 
 aside h3 {
     color: var(--morado);
     margin-top: 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--dorado);
     padding-bottom: 5px;
 }
 
 aside ul {
-    list-style: none; /* Quitamos los puntos de la lista */
+    list-style: none;
     padding: 0;
 }
 
@@ -146,27 +145,24 @@ aside a:hover {
     text-decoration: underline;
 }
 
-.btn-subir {
-    position: fixed;   /* Se queda fijo en la pantalla */
-    bottom: 20px;      /* Abajo */
-    right: 20px;       /* Derecha */
-    
-    background: #D4AF37; /* Fondo Dorado */
-    color: #fff;         /* Texto blanco */
-    
-    padding: 10px 15px;  /* Tamaño del botón */
-    text-decoration: none; /* Sin subrayado */
-    font-weight: bold;
-    border-radius: 5px;  /* Bordes un pelín redondeados */
+.subir {
+    position: fixed;   
+    bottom: 20px;      
+    right: 20px;       
+    background-color: var(--dorado); 
+    color: var(--blanco);         
+    padding: 10px 15px;  
+    text-decoration: none; 
+    border-radius: 5px;  
 }
 
-.btn-subir:hover {
-    background: #4B0082; /* Cambia a Morado al pasar el ratón */
+.subir:hover {
+    background: var(--moradoNav); 
 }
 
 /* --- FOOTER --- */
 footer {
-    background-color: #1a1a1a; 
+    background-color: var(--footer); 
     color: #cccccc; 
     border-top: 3px solid var(--dorado); 
     padding: 30px 20px;
@@ -193,7 +189,7 @@ footer a {
     }
     
     main {
-        padding: 15px; /* Menos relleno en móvil */
+        padding: 15px;
         width: 90%;
     }
 }

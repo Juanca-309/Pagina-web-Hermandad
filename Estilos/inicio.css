@@ -5,6 +5,7 @@
     --dorado: #D4AF37;
     --blanco: #ffffff;
     --fondo: #f9f9f9;
+    --footer: #1a1a1a;
 }
 
 /* --- GENERAL --- */
@@ -114,28 +115,25 @@ main {
     filter: drop-shadow(0 0 10px rgb(106, 106, 106)); 
 }
 
-.btn-subir {
-    position: fixed;   /* Se queda fijo en la pantalla */
-    bottom: 20px;      /* Abajo */
-    right: 20px;       /* Derecha */
-    
-    background: #D4AF37; /* Fondo Dorado */
-    color: #fff;         /* Texto blanco */
-    
-    padding: 10px 15px;  /* Tamaño del botón */
-    text-decoration: none; /* Sin subrayado */
-    font-weight: bold;
-    border-radius: 5px;  /* Bordes un pelín redondeados */
+.subir {
+    position: fixed;   
+    bottom: 20px;      
+    right: 20px;       
+    background-color: var(--dorado); 
+    color: var(--blanco);         
+    padding: 10px 15px;  
+    text-decoration: none; 
+    border-radius: 5px;
 }
 
-.btn-subir:hover {
-    background: #4B0082; /* Cambia a Morado al pasar el ratón */
+.subir:hover {
+    background-color: var(--morado); /* Cambia a Morado al pasar el ratón */
 }
 
 /* --- FOOTER --- */
 footer {
-    background-color: #1a1a1a; 
-    color: #cccccc; 
+    background-color: var(--footer); 
+    color: var(--blanco); 
     border-top: 3px solid var(--dorado); 
     padding: 30px 20px;
     text-align: center;
