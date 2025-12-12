@@ -21,7 +21,7 @@ body {
 
 /* MAIN */
 header {
-    background-color: var(--morado);
+    background: radial-gradient(circle, var(--morado), var(--moradoNav));
     color: var(--blanco);
     padding-top: 20px;
     border-bottom: 5px solid var(--dorado);
