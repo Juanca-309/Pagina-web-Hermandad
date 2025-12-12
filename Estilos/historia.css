@@ -153,8 +153,12 @@ aside a {
 }
 
 aside a:hover {
-    color: var(--dorado);
-    text-decoration: underline;
+    color: var(--blanco);
+    background-color: var(--morado);
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .subir {
