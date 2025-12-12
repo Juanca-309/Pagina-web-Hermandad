@@ -1,4 +1,3 @@
-/* --- VARIABLES --- */
 :root {
     --morado: #4B0082;
     --moradoNav: #320056;
@@ -8,7 +7,6 @@
     --footer: #1a1a1a;
 }
 
-/* --- GENERAL --- */
 body {
     font-family: 'Times New Roman', Times, serif;
     background-image: url("../imagenes/Damasco.png");
@@ -21,7 +19,7 @@ body {
     line-height: 1.5;
 }
 
-/* --- CABECERA (Igual que en Inicio) --- */
+/* MAIN */
 header {
     background-color: var(--morado);
     color: var(--blanco);
@@ -30,7 +28,7 @@ header {
     text-align: center;
 }
 
-.caja-logo img {
+.logo img {
     width: 120px;
     display: block;
     margin: 0 auto 10px auto;
@@ -38,7 +36,7 @@ header {
     transition: transform 0.5s ease;
 }
 
-.caja-logo img:hover {
+.logo img:hover {
     transform: scale(1.1);
 }
 
@@ -55,7 +53,6 @@ header {
     margin: 0;
 }
 
-/* --- MENÚ --- */
 nav {
     background-color: var(--moradoNav);
 }
@@ -83,7 +80,7 @@ nav a:hover {
     color: var(--morado);
 }
 
-/* --- MAIN (Contenedor Principal) --- */
+/* MAIN */
 main {
     max-width: 1000px;
     margin: 40px auto;
@@ -102,18 +99,19 @@ h2 {
     margin-top: 20px;
 }
 
-/* --- FORMULARIO DE CONTACTO --- */
 #contacto form {
+    width: 100%; 
     width: 600px; 
-    margin: auto; 
+    margin: 0 auto; 
     padding: 20px;
     background-color: var(--fondo); 
     border-radius: 10px;
     border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 fieldset {
-    border: 2px solid var(--dorado); /* Borde dorado */
+    border: 2px solid var(--dorado); 
     border-radius: 8px;
     padding: 20px;
 }
@@ -126,13 +124,12 @@ legend {
 }
 
 label {
-    display: block; /* Cada etiqueta en una línea nueva */
+    display: block; 
     margin-top: 15px;
     font-weight: bold;
     color: #333;
 }
 
-/* Estilos para las cajas de texto */
 #nombre{
     width: 95%;
     padding: 10px;
@@ -157,7 +154,6 @@ label {
     border-radius: 5px;
 }
 
-/* Botón de enviar */
 button {
     background-color: var(--morado);
     color: var(--blanco);
@@ -174,11 +170,10 @@ button {
 }
 
 button:hover {
-    background-color: var(--dorado); /* Cambio de color al pasar el ratón */
+    background-color: var(--dorado);
     color: var(--morado);
 }
 
-/* --- SEDE CANÓNICA (MAPA) --- */
 #sede {
     margin-top: 50px;
     text-align: center;
@@ -193,27 +188,41 @@ iframe {
     width: 100%;
     max-width: 800px;
     height: 400px;
-    border: 4px solid var(--morado); /* Marco morado para el mapa */
+    border: 4px solid var(--morado);
     border-radius: 10px;
 }
 
 .subir {
     position: fixed;   
-    bottom: 20px;     
+    bottom: 20px;      
     right: 20px;       
-    background: var(--dorado); 
+    background-color: var(--dorado); 
     color: var(--blanco);         
     padding: 10px 15px;  
     text-decoration: none; 
-    font-weight: bold;
-    border-radius: 5px;  
+    border-radius: 5px;
+    animation: boton 3s infinite ease-in-out;
 }
 
 .subir:hover {
-    background-color: var(--moradoNav);
+    background-color: var(--morado);
+    animation: none;
+    transform: scale(1.1);
 }
 
-/* --- FOOTER --- */
+@keyframes boton {
+    0% { 
+        transform: translateY(0); 
+    }
+    50% { 
+        transform: translateY(-5px); 
+    }
+    100% { 
+        transform: translateY(0); 
+    }
+}
+
+/* FOOTER */
 footer {
     background-color: var(--footer); 
     color: var(--blanco); 
@@ -231,7 +240,7 @@ footer a {
     text-decoration: none;
 }
 
-/* --- MÓVIL --- */
+/* MÓVIL */
 @media (max-width: 700px) {
     nav ul { 
         flex-direction: column; 
@@ -246,11 +255,12 @@ footer a {
         width: 90%;
     }
 
-    form {
-        padding: 10px; /* Menos relleno en el formulario en móviles */
+    #contacto form {
+        width: 100%;
+        padding: 10px; 
     }
 
     iframe {
-        height: 300px; /* Mapa un poco más bajo en móviles */
+        height: 300px; 
     }
 }

@@ -1,4 +1,3 @@
-/* --- VARIABLES --- */
 :root {
     --morado: #4B0082;
     --moradoNav: #320056;
@@ -8,7 +7,6 @@
     --footer: #1a1a1a;
 }
 
-/* --- GENERAL --- */
 body {
     font-family: 'Times New Roman', Times, serif;
     background-image: url("../imagenes/Damasco.png");
@@ -21,7 +19,7 @@ body {
     line-height: 1.5;
 }
 
-/* --- CABECERA (Estilo igual a Inicio) --- */
+/* HEADER */
 header {
     background-color: var(--morado);
     color: var(--blanco);
@@ -30,7 +28,7 @@ header {
     text-align: center;
 }
 
-.caja-logo img {
+.logo img {
     width: 120px;
     display: block;
     margin: 0 auto 10px auto;
@@ -38,7 +36,7 @@ header {
     transition: transform 0.5s ease;
 }
 
-.caja-logo img:hover {
+.logo img:hover {
     transform: scale(1.1);
 }
 
@@ -55,7 +53,6 @@ header {
     margin: 0;
 }
 
-/* --- MENÚ --- */
 nav {
     background-color: var(--moradoNav);
 }
@@ -83,7 +80,7 @@ nav a:hover {
     color: var(--morado);
 }
 
-/* --- CONTENEDOR PRINCIPAL --- */
+/* MAIN */
 main {
     max-width: 1000px;
     margin: 40px auto;
@@ -102,7 +99,6 @@ h2 {
     margin-top: 40px;
 }
 
-/* --- SECCIÓN TRAJES DE ESTATUTOS --- */
 #traje article {
     text-align: center; 
 }
@@ -118,7 +114,7 @@ figure img {
     width: 300px;     
     height: 450px;        
     object-fit: cover;    
-    border: 3px solid var(--morado);
+    border: 3px solid var(--dorado);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
@@ -130,14 +126,12 @@ figcaption {
     padding: 0 10px;
 }
 
-/* --- SECCIÓN MULTIMEDIA --- */
 #datos {
     text-align: center;
 }
 
 video {
-    width: 100%;
-    max-width: 500px;
+    width: 300px;
     border: 4px solid var(--dorado);
     border-radius: 10px;
     display: block;
@@ -149,7 +143,6 @@ audio {
     margin-top: 10px;
 }
 
-/* --- TABLA DE DATOS --- */
 table {
     width: 100%;
     border-collapse: collapse; 
@@ -186,22 +179,36 @@ tfoot td {
     position: fixed;   
     bottom: 20px;      
     right: 20px;       
-    background: var(--dorado); 
+    background-color: var(--dorado); 
     color: var(--blanco);         
-    padding: 10px 15px; 
+    padding: 10px 15px;  
     text-decoration: none; 
-    font-weight: bold;
-    border-radius: 5px;  
+    border-radius: 5px;
+    animation: boton 3s infinite ease-in-out;
 }
 
 .subir:hover {
-    background-color: var(--moradoNav); 
+    background-color: var(--morado);
+    animation: none;
+    transform: scale(1.1);
 }
 
-/* --- FOOTER --- */
+@keyframes boton {
+    0% { 
+        transform: translateY(0); 
+    }
+    50% { 
+        transform: translateY(-5px); 
+    }
+    100% { 
+        transform: translateY(0); 
+    }
+}
+
+/* FOOTER */
 footer {
     background-color: var(--footer); 
-    color: #cccccc; 
+    color: var(--blanco); 
     border-top: 3px solid var(--dorado); 
     padding: 30px 20px;
     text-align: center;
@@ -216,7 +223,7 @@ footer a {
     text-decoration: none;
 }
 
-/* --- MÓVIL --- */
+/* MÓVIL */
 @media (max-width: 700px) {
     nav ul { 
         flex-direction: column; 

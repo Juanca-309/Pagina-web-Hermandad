@@ -1,4 +1,3 @@
-/* --- VARIABLES (Igual que inicio) --- */
 :root {
     --morado: #4B0082;
     --moradoNav: #320056;
@@ -8,7 +7,6 @@
     --footer: #1a1a1a;
 }
 
-/* --- GENERAL --- */
 body {
     font-family: 'Times New Roman', Times, serif;
     background-image: url("../imagenes/Damasco.png");
@@ -21,7 +19,7 @@ body {
     line-height: 1.5;
 }
 
-/* --- CABECERA --- */
+/* HEADER */
 header {
     background-color: var(--morado);
     color: var(--blanco);
@@ -30,7 +28,7 @@ header {
     text-align: center;
 }
 
-.caja-logo img {
+.logo img {
     width: 120px;
     display: block;
     margin: 0 auto 10px auto;
@@ -38,7 +36,7 @@ header {
     transition: transform 0.5s ease;
 }
 
-.caja-logo img:hover {
+.logo img:hover {
     transform: scale(1.1);
 }
 
@@ -55,7 +53,6 @@ header {
     margin: 0;
 }
 
-/* --- MENÚ --- */
 nav {
     background-color: var(--moradoNav);
 }
@@ -83,18 +80,24 @@ nav a:hover {
     color: var(--morado);
 }
 
-/* --- MAIN (Contenedor Principal) --- */
+/* MAIN */
 main {
-    max-width: 1000px;
+    max-width: 1000px; 
     margin: 40px auto;
     padding: 30px;
     background-color: var(--blanco);
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border: 5px solid var(--dorado);
     border-radius: 10px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
 }
 
-/* --- SECCIÓN ESPECÍFICA DE HISTORIA --- */
+#historia {
+    flex: 3; 
+}
+
 #historia h2 {
     color: var(--morado);
     border-bottom: 2px solid var(--dorado);
@@ -102,18 +105,27 @@ main {
     text-align: center;
 }
 
-/* Párrafos de texto */
 #historia p {
     text-align: justify;
     font-size: 1.1rem;
     margin-bottom: 20px;
 }
 
-/* --- BARRA LATERAL (ASIDE) --- */
+#historia img {
+    display: block;
+    margin: 30px auto;
+    width: 200px;
+    height: auto;
+    border: 2px solid var(--dorado);
+    border-radius: 8px;
+    border-color: var(--dorado);
+}
+
 aside {
+    flex: 1; 
     background-color: var(--fondo);
     padding: 20px;
-    margin-top: 40px;
+    margin-top: 0;
     border-left: 5px solid var(--dorado);
     border-radius: 5px;
 }
@@ -153,17 +165,32 @@ aside a:hover {
     color: var(--blanco);         
     padding: 10px 15px;  
     text-decoration: none; 
-    border-radius: 5px;  
+    border-radius: 5px;
+    animation: boton 3s infinite ease-in-out;
 }
 
 .subir:hover {
-    background: var(--moradoNav); 
+    background-color: var(--morado);
+    animation: none;
+    transform: scale(1.1);
 }
 
-/* --- FOOTER --- */
+@keyframes boton {
+    0% { 
+        transform: translateY(0); 
+    }
+    50% { 
+        transform: translateY(-5px); 
+    }
+    100% { 
+        transform: translateY(0); 
+    }
+}
+
+/* FOOTER */
 footer {
     background-color: var(--footer); 
-    color: #cccccc; 
+    color: var(--blanco); 
     border-top: 3px solid var(--dorado); 
     padding: 30px 20px;
     text-align: center;
@@ -178,7 +205,7 @@ footer a {
     text-decoration: none;
 }
 
-/* --- MÓVIL --- */
+/* MÓVIL */
 @media (max-width: 700px) {
     nav ul { 
         flex-direction: column; 
@@ -191,5 +218,6 @@ footer a {
     main {
         padding: 15px;
         width: 90%;
+        flex-direction: column; 
     }
 }

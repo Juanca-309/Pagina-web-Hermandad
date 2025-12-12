@@ -1,4 +1,3 @@
-/* --- VARIABLES --- */
 :root {
     --morado: #4B0082;
     --moradoNav: #320056;
@@ -8,7 +7,6 @@
     --footer: #1a1a1a;
 }
 
-/* --- GENERAL --- */
 body {
     font-family: 'Times New Roman', Times, serif;
     background-image: url("../imagenes/Damasco.png");
@@ -21,7 +19,7 @@ body {
     line-height: 1.5;
 }
 
-/* --- CABECERA--- */
+/* HEADER */
 header {
     background-color: var(--morado);
     color: var(--blanco);
@@ -30,7 +28,7 @@ header {
     text-align: center;
 }
 
-.caja-logo img {
+.logo img {
     width: 120px;
     display: block;
     margin: 0 auto 10px auto;
@@ -38,7 +36,7 @@ header {
     transition: transform 0.5s ease;
 }
 
-.caja-logo img:hover {
+.logo img:hover {
     transform: scale(1.1);
 }
 
@@ -55,7 +53,6 @@ header {
     margin:0;
 }
 
-/* --- MENÚ --- */
 nav {
     background-color: var(--moradoNav);
 }
@@ -83,7 +80,7 @@ nav a:hover {
     color: var(--morado);
 }
 
-/* --- MAIN --- */
+/* MAIN */
 main {
     max-width: 1000px;
     margin: 40px auto;
@@ -113,6 +110,19 @@ main {
 .escudo img{
     width: 300px; 
     filter: drop-shadow(0 0 10px rgb(106, 106, 106)); 
+    animation: escudo 5s infinite ease-in-out;
+}
+
+@keyframes escudo {
+    0% { 
+        transform: scale(1); 
+    }
+    50% { 
+        transform: scale(0.9); 
+    }
+    100% { 
+        transform: scale(1); 
+    }
 }
 
 .subir {
@@ -124,13 +134,28 @@ main {
     padding: 10px 15px;  
     text-decoration: none; 
     border-radius: 5px;
+    animation: boton 3s infinite ease-in-out;
 }
 
 .subir:hover {
-    background-color: var(--morado); /* Cambia a Morado al pasar el ratón */
+    background-color: var(--morado);
+    animation: none;
+    transform: scale(1.1);
 }
 
-/* --- FOOTER --- */
+@keyframes boton {
+    0% { 
+        transform: translateY(0); 
+    }
+    50% { 
+        transform: translateY(-5px); 
+    }
+    100% { 
+        transform: translateY(0); 
+    }
+}
+
+/* FOOTER */
 footer {
     background-color: var(--footer); 
     color: var(--blanco); 
@@ -148,7 +173,7 @@ footer a {
     text-decoration: none;
 }
 
-/* --- MÓVIL --- */
+/* MÓVIL */
 @media (max-width: 700px) {
     nav ul { 
         flex-direction: column; 

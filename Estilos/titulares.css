@@ -1,4 +1,3 @@
-/* --- VARIABLES--- */
 :root {
     --morado: #4B0082;
     --moradoNav: #320056;
@@ -8,7 +7,6 @@
     --footer: #1a1a1a;
 }
 
-/* --- GENERAL --- */
 body {
     font-family: 'Times New Roman', Times, serif;
     background-image: url("../imagenes/Damasco.png");
@@ -21,7 +19,7 @@ body {
     line-height: 1.6;
 }
 
-/* --- CABECERA (Igual en todas) --- */
+/* HEADER */
 header {
     background-color: var(--morado);
     color: var(--blanco);
@@ -30,7 +28,7 @@ header {
     text-align: center;
 }
 
-.caja-logo img {
+.logo img {
     width: 120px;
     display: block;
     margin: 0 auto 10px auto;
@@ -38,7 +36,7 @@ header {
     transition: transform 0.5s ease;
 }
 
-.caja-logo img:hover {
+.logo img:hover {
     transform: scale(1.1);
 }
 
@@ -50,12 +48,11 @@ header {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
 
-.titulos p{
-    color:var(--dorado); 
-    margin:0;
+.titulos p {
+    color: var(--dorado); 
+    margin: 0;
 }
 
-/* --- MENÚ --- */
 nav {
     background-color: var(--moradoNav);
 }
@@ -83,7 +80,7 @@ nav a:hover {
     color: var(--morado);
 }
 
-/* --- CONTENIDO PRINCIPAL --- */
+/* MAIN */
 main {
     max-width: 1000px;
     margin: 40px auto;
@@ -98,78 +95,112 @@ h2 {
     color: var(--morado);
     text-align: center;
     border-bottom: 2px solid var(--dorado);
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
 }
 
-.galeria-grid {
+.galeria {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 .tarjeta {
     position: relative;
-    height: 500px; 
+    height: 450px; 
     border-radius: 10px;
     overflow: hidden; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    border: 1px solid var(--dorado);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    border: 3px solid var(--dorado);
+    animation: aparecerTarjeta 1.5s ease-out;
 }
 
 .tarjeta img {
     width: 100%;
     height: 100%;
     object-fit: cover; 
-    transition: transform 0.5s; 
+    transition: transform 0.5s ease;
 }
 
-.info-oculta {
+.info {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%; 
-    background-color: var(--morado); 
+    background-color: rgba(75, 0, 130, 0.9);
     color: var(--blanco);
     padding: 20px;
     box-sizing: border-box;
-    transform: translateY(88%); 
+    transform: translateY(100%); 
     transition: transform 0.4s ease; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
-.info-oculta h3 {
+.info h3 {
     color: var(--dorado);
     margin-top: 0;
+    border-bottom: 1px solid var(--dorado);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .tarjeta:hover img {
     transform: scale(1.1); 
 }
 
-.tarjeta:hover .info-oculta {
+.tarjeta:hover .info {
     transform: translateY(0); 
+}
+
+@keyframes aparecerTarjeta {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .subir {
     position: fixed;   
     bottom: 20px;      
     right: 20px;       
-    background: var(--dorado); 
-    color: var(--blanco);        
+    background-color: var(--dorado); 
+    color: var(--blanco);         
     padding: 10px 15px;  
     text-decoration: none; 
-    border-radius: 5px;  
+    border-radius: 5px;
+    animation: boton 3s infinite ease-in-out;
 }
 
 .subir:hover {
-    background-color: var(--moradoNav); 
+    background-color: var(--morado);
+    animation: none;
+    transform: scale(1.1);
 }
 
-/* --- FOOTER --- */
+@keyframes boton {
+    0% { 
+        transform: translateY(0); 
+    }
+    50% { 
+        transform: translateY(-5px); 
+    }
+    100% { 
+        transform: translateY(0); 
+    }
+}
+
+/* FOOTER */
 footer {
     background-color: var(--footer); 
-    color: #cccccc; 
+    color: var(--blanco); 
     border-top: 3px solid var(--dorado); 
     padding: 30px 20px;
     text-align: center;
@@ -184,12 +215,8 @@ footer a {
     text-decoration: none;
 }
 
-/* --- RESPONSIVE (MÓVIL) --- */
+/* MÓVIL*/
 @media (max-width: 700px) {
-    .caja-logo {
-        flex-direction: column; 
-    }
-    
     nav ul {
         flex-direction: column; 
     }
@@ -198,8 +225,28 @@ footer a {
         text-align: center;
         border-bottom: 1px solid rgba(255,255,255,0.1);
     }
+
+    .galeria {
+        grid-template-columns: repeat(1, 1fr);
+    }
     
-    .info-oculta {
-        transform: translateY(88%); 
+    .tarjeta {
+        height: auto; 
+    }
+
+    .tarjeta img {
+        height: 300px; 
+    }
+
+    .info {
+        position: relative; 
+        transform: none;    
+        height: auto;       
+        background-color: var(--morado); 
+        padding: 20px;
+    }
+
+    .tarjeta:hover img {
+        transform: none;
     }
 }
